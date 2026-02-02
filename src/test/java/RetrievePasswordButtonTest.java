@@ -29,12 +29,12 @@ public class RetrievePasswordButtonTest {
 
     @Test
     void retrievePasswordButtonTestExists() throws InterruptedException {
-//   Шаг 1. Открываем сайт
+        //   Шаг 1. Открываем сайт
         open("https://the-internet.herokuapp.com/");
         System.out.println("1. Открыт сайт https://the-internet.herokuapp.com/");
         sleep(1000);
 
-//   Шаг 2. Находим ссылку Forgot Password и переходим по ней
+        //   Шаг 2. Находим ссылку Forgot Password и переходим по ней
         $(By.linkText("Forgot Password")).click();
         System.out.println("2. Открыта страница восстановления пароля");
         sleep(1000);
