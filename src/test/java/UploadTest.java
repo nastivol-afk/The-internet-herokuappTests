@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class UploadTest {
@@ -31,12 +31,12 @@ public class UploadTest {
     @Test
      void uploadTestPositive()
     {
-//Шаг 1. Открываем сайт
+        //Шаг 1. Открываем сайт
         open("https://the-internet.herokuapp.com/");
         System.out.println("1. Сайт Открыт");
 
-//Шаг 2. Находим ссылку на File Upload
-        $("a[href='/upload']").exists();
+        //Шаг 2. Находим ссылку на File Upload
+        assertTrue ($("a[href='/upload']").exists());
 
         //Шаг 3. Переходим на страницу выгрузки файла
         $(By.linkText("File Upload")).click();
@@ -57,7 +57,7 @@ public class UploadTest {
         sleep(3000);
 
         //Шаг 6. Проверяем, что картинка загрузилась
-        $(byText("File Uploaded!")).isDisplayed();
+        assertTrue (  $(byText("File Uploaded!")).isDisplayed() );
         System.out.println("6. Появилось уведомление о том, что файл загружен");
         sleep(3000);
         // Проверяем название файла
@@ -72,7 +72,7 @@ public class UploadTest {
         System.out.println("1. Сайт Открыт");
 
         //Шаг 2. Находим ссылку на File Upload
-        $("a[href='/upload']").exists();
+        assertTrue ($("a[href='/upload']").exists());
 
         //Шаг 3. Переходим на страницу выгрузки файла
         $(By.linkText("File Upload")).click();
